@@ -10,6 +10,9 @@
 		"es6-symbol": "^3.1.1",
 		"react": "16.0.0-alpha.6",
 		"react-native": "0.43.2",
+		"react-native-code-push": "^2.0.1-beta",
+		"react-native-message-bar": "^1.6.0",
+		"react-native-side-menu": "^0.20.1",
 		"react-redux": "^5.0.3",
 		"redux": "^3.6.0",
 		"redux-saga": "^0.14.5"
