@@ -13,7 +13,8 @@ import Router from '../routers';
 import Menu from './menu';
 import Home from './home';
 
-export default class RNavigator extends Component {
+export default class LeNavigator extends Component {
+
   constructor(props){
     super(props);
     this.state = {
@@ -59,7 +60,7 @@ export default class RNavigator extends Component {
   //private methods
   handleAppStateChange(appState){
     if (appState==='active') {
-      CodePush.sync({installMode,CodePush.InstallMode.ON_NEXT_RESUME});
+      CodePush.sync({installMode:CodePush.InstallMode.ON_NEXT_RESUME});
     }
   }
 
@@ -67,7 +68,7 @@ export default class RNavigator extends Component {
     this.setState({isOpen});
   }
   _isCurrentRoute(route){
-    return this.router&&this.router.isCurrentRoute(route.is);
+    return this.router&&this.router.isCurrentRoute(route.id);
   }
 
   _onMenuItemSelected(item,isForceReplace){
@@ -89,7 +90,6 @@ export default class RNavigator extends Component {
     return <route.component
         router={this.router}
         updateMenuState={isOpen=>this._updateMenuState(isOpen)}
-        passProps={route.passProps};
-      />
+        passProps={route.passProps}/>;
   }
 }

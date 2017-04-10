@@ -9,7 +9,7 @@ export default function configureStore(initialState={}) {
     sagaMiddleware
   ];
   const enhancers = [
-    applyMiddleware(...middlewares);
+    applyMiddleware(...middlewares)
   ];
   const store =createStore(
     rootReducer,
