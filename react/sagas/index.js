@@ -5,8 +5,10 @@ import { fetchResource } from '../utils/saga_helper';
 import api from '../services/api';
 
 import * as forumListActions from '../actions/forumaction';
+import * as topicListActions from '../actions/fetchTopicList';
 
 const fetchForumListApi = fetchResource.bind(null,forumListActions,api.fetchForumList);
+const fetchTopicListApi = fetchResource.bind(null,topicListActions,api.fetchTopicList);
 
 function* watchForumList(){
   while (true) {
@@ -19,6 +21,18 @@ function* fetchForumList(payload){
   yield fork(fetchForumListApi, payload);
 }
 
+function* watchTopicList(){
+  while (true) {
+    const { payload } = yield take(topicListActions.REQUEST);
+    yield fork(fetchTopicList.payload);
+  }
+}
+
+function* fetchTopicList(payload){
+  yield fork(fetchTopicListApi,payload);
+}
+
 export default function* rootSaga() {
   yield fork(watchForumList);
+  yield fork(watchTopicList);
 }

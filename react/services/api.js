@@ -12,6 +12,7 @@ function callApi(endPoint,options){
 
 
 export default {
+
   fetchForumList: ({boardId})=>{
     let url= 'forum/forumlist';
     if (boardId&&boardId!=='all') {
@@ -19,4 +20,13 @@ export default {
     }
     return callApi(url);
   },
+
+  fetchTopicList: ({
+      boardId,
+      sortType = DEFAULT_SORTTYPE,
+      page = DEFAULT_PAGE,
+      pageSize = DEFAULT_PAGESIZE
+  }) => {
+      return callApi(`forum/topiclist&boardId=${boardId}&sortby=${sortType}&page=${page}&pageSize=${pageSize}`);
+  }
 };
