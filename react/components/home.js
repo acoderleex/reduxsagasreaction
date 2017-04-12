@@ -3,9 +3,10 @@ import React, {Component} from 'react';
 import {View, Text} from 'react-native';
 import _ from 'lodash';
 import {connect} from 'react-redux';
-import styles from '../styles/common';
+import styles from '../styles/main';
 import {fetchTopicList} from '../actions/fetchTopicList';
 import TopicList from './topiclist';
+import Header from '../views/header';
 
 class Home extends Component {
 
@@ -23,11 +24,12 @@ class Home extends Component {
         console.log("====fetchForumList render=====");
         let {router, topicList} = this.props;
         return (
-          <View style={{flex:1}}>
-            <TopicList topicList={_.get(topicList, [
-                this.boardId, 'publish'
-            ], {})}/>
-          </View>
+            <View style={styles.container}>
+                <Header title='首页' updateMenuState={isOpen => this.props.updateMenuState(isOpen)}/>
+                <TopicList topicList={_.get(topicList, [
+                    this.boardId, 'publish'
+                ], {})}/>
+            </View>
         );
     }
 }

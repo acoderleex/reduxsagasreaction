@@ -13,11 +13,10 @@ class TopicList extends Component {
         if (topicList.list) {
             realTopicList = topicList.list;
             isRefreshing = topicList.isRefreshing;
-            console.log('====topicList======'+realTopicList.length);
-        }else{
-          console.log('====topicList==null===='+realTopicList.length);
+            console.log('====topicList======' + realTopicList.length);
+        } else {
+            console.log('====topicList==null====' + realTopicList.length);
         }
-
         return (
             <View style={{
                 flex: 1

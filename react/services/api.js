@@ -12,7 +12,6 @@ function callApi(endPoint, options) {
 }
 
 export default {
-
     fetchTopicList : ({
         boardId,
         sortType = DEFAULT_SORTTYPE,

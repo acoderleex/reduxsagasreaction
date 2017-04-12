@@ -1,5 +1,5 @@
 'use strict';
-
+//react-native-storage
 import { AsyncStorage } from 'react-native';
 
 function checkStatus(response){
