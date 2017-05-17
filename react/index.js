@@ -3,7 +3,7 @@ import React, { Component}  from 'react';
 import { Provider } from 'react-redux';
 import configureStore from './store';
 import rootSaga from './sagas';
-import Leavigator from './components/navigator';
+import Leavigator from './components/tony_navigator';
 
 const store = configureStore();
 store.runSaga(rootSaga);

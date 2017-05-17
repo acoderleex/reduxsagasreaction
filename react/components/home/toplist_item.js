@@ -7,7 +7,7 @@ import moment from 'moment';
 import 'moment/locale/zh-cn';
 
 import styles from '../../styles/topic_item';
-import colors from '../../styles/colors';
+import colors from '../../styles/color';
 
 class TopicItem extends Component {
     render() {
