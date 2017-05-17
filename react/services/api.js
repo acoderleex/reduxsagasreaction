@@ -26,5 +26,13 @@ export default {
             url += `&fid=${boardId}`;
         }
         return callApi(url);
-    }
+    },
+    fetchTopList : ({
+        boardId,
+        sortType = DEFAULT_SORTTYPE,
+        page = DEFAULT_PAGE,
+        pageSize = DEFAULT_PAGESIZE
+    }) => {
+        return callApi(`forum/topiclist&boardId=${boardId}&sortby=${sortType}&page=${page}&pageSize=${pageSize}`);
+    },
 };
