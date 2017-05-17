@@ -11,7 +11,7 @@ import styles from '../styles/menuitem';
 import colors from '../styles/color';
 export default class MenuItem extends Component {
     render(){
-        let { menu, rooter, isCurrentRoute } = this.props;
+        let { menu, router, isCurrentRoute } = this.props;
         let { title, icon, iconSize, actionName } = menu;
         return(
           <TouchableHighlight underlayColor={colors.underlay}
